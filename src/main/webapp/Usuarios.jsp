@@ -83,9 +83,9 @@
 			<form action="Usuario" method="post">
 
 				<div>
-					<input class="control" type="text" name="cedula" value="<%=cedula%>"
-						placeholder="cedula" required <%=estado%> >
-					<input type="hidden" name="cod" value="<%=cedula%>">
+					<input class="control" type="text" name="cedula"
+						value="<%=cedula%>" placeholder="cedula" required <%=estado%>>
+					<input type="hidden" name="ced" value="<%=cedula%>">
 				</div>
 				<div>
 					<input class="control" type="text" name="nombre"
@@ -115,9 +115,9 @@
 
 				<input class="boton" type="submit" value="Consultar"
 					name="consultar"> <input class="boton" type="submit"
-					value="Crear"> <input class="boton" type="submit"
-					value="Actualizar"> <input class="boton" type="submit"
-					value="Borrar">
+					value="Nuevo" name="crear"> <input class="boton"
+					type="submit" value="Actualizar" name="actualizar"> <input
+					class="boton" type="submit" value="Borrar" name="borrar">
 			</form>
 		</section>
 
