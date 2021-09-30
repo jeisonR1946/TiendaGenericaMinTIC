@@ -1,0 +1,63 @@
+
+body {
+	
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/fondo-generico.jpg");
+	background-size: cover;
+	font-family: sans-serif;
+	height: 100vh;
+}
+
+
+.form-gene {
+	width: 400px;
+	background:#4164b8;
+	padding: 20px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 4px;
+	font-family: sans-serif;
+	box-shadow: 7px 13px 37px #ed2468;
+	
+}
+
+.form-gene h4{
+	
+	font-size: 22px;
+	margin-bottom: 20px;
+		
+}
+
+.control {
+	
+	width: 100%;
+	background: #4164b8;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid #ffffff;
+	font-family: sans-serif;
+	color: white;
+	font-size: 18px;
+	
+	
+}
+
+::placeholder { 
+    color: #B8B9BC;
+    opacity: 1; 
+}
+
+
+.form-gene .boton {
+	width:100px;
+	background:#ed2468;
+	border: none;
+	padding: 12px;	
+	font-family: sans-serif;
+	color: white;
+	margin: 16px 0;
+	font-size: 16px;
+	
+}

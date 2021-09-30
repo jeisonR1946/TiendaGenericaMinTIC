@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/master.css">
 </head>
-<body>
+<body class="generico">
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
