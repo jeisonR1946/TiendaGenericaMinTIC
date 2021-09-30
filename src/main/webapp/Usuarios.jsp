@@ -83,41 +83,61 @@
 			<form action="Usuario" method="post">
 
 				<div>
-					<input class="control" type="text" name="cedula"
-						value="<%=cedula%>" placeholder="cedula" required <%=estado%>>
-					<input type="hidden" name="ced" value="<%=cedula%>">
-				</div>
-				<div>
-					<input class="control" type="text" name="nombre"
-						placeholder="nombre" value="<%=nombre%>">
-				</div>
-
-				<div>
-
-					<input class="control" type="email" name="correo"
-						placeholder="correo" value="<%=correo%>">
-
+					<label class="subtitulos">Cedula: </label> <input class="control"
+						type="text" name="cedula" value="<%=cedula%>" placeholder="cedula"
+						required <%=estado%>> <input type="hidden" name="ced"
+						value="<%=cedula%>">
+						
+							<label class="subtitulos">Correo: </label> <input class="control"
+						type="email" name="correo" placeholder="correo"
+						value="<%=correo%>">
 				</div>
 
+
 				<div>
-					<input class="control" type="text" name="usuario"
-						placeholder="usuario" value="<%=usuario%>">
+				
+
+				</div>
+				<div>
+					<label class="subtitulos">Nombre Completo: </label> <input
+						class="control" type="text" name="nombre" placeholder="nombre"
+						value="<%=nombre%>">
 				</div>
 
 				<div>
+					<label class="subtitulos">Usuario: </label> <input class="control"
+						type="text" name="usuario" placeholder="usuario"
+						value="<%=usuario%>">
+				</div>
 
-					<input class="control" type="password" name="contrasena"
+				<div>
+					<label class="subtitulos">Contraseña: </label> <input
+						class="control" type="password" name="contrasena"
 						placeholder="contrasena" value="<%=contrasena%>">
 
 				</div>
 
-				<div></div>
+				<div class="boton-cent">
 
-				<input class="boton" type="submit" value="Consultar"
-					name="consultar"> <input class="boton" type="submit"
-					value="Nuevo" name="crear"> <input class="boton"
-					type="submit" value="Actualizar" name="actualizar"> <input
-					class="boton" type="submit" value="Borrar" name="borrar">
+					<div>
+						<input class="boton" type="submit" value="Consultar"
+							name="consultar">
+					</div>
+					<div>
+						<input class="boton" type="submit" value="Crear" name="crear">
+					</div>
+					<div>
+						<input class="boton" type="submit" value="Actualizar"
+							name="actualizar">
+					</div>
+					<div>
+						<input class="boton" type="submit" value="Borrar" name="borrar">
+					</div>
+
+				</div>
+
+
+
 			</form>
 		</section>
 

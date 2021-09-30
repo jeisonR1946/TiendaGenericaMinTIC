@@ -3,20 +3,12 @@
 body {
 	margin: 0;
 	padding: 0;
-	background:url("/../img/mintic.jpg") no-repeat center top;
+	background:url("../img/mintic.jpg") no-repeat center top;
 	background-size: cover;
 	font-family: sans-serif;
 	height: 100vh;
 }
 
-body .generico {
-	margin: 0;
-	padding: 0;
-	background:url("/../img/fondo-generico.jpg") no-repeat center top;
-	background-size: cover;
-	font-family: sans-serif;
-	height: 100vh;
-}
 
 .login {
 	width: 320px;

@@ -14,6 +14,16 @@
 </head>
 <body class="generico">
 
+	<%!String mensaje = "";%>
+
+	<%
+	if (request.getParameter("men") != null) {
+
+		mensaje = request.getParameter("men");
+		out.print("<script>alert('" + mensaje + "');</script>");//mensaje alert javascript
+	}
+	%>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 		<a class="navbar-brand" href="MenuPrincipal.jsp"><img

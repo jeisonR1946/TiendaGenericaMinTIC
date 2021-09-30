@@ -1,6 +1,4 @@
-
 body {
-	
 	margin: 0;
 	padding: 0;
 	background-image: url("../img/fondo-generico.jpg");
@@ -9,28 +7,32 @@ body {
 	height: 100vh;
 }
 
-
 .form-gene {
-	width: 400px;
-	background:#4164b8;
+	width: 500px;
+	background: #4164b8;
 	padding: 20px;
 	margin: auto;
 	margin-top: 100px;
 	border-radius: 4px;
 	font-family: sans-serif;
 	box-shadow: 7px 13px 37px #ed2468;
-	
 }
 
-.form-gene h4{
-	
+.boton-cent {
+	align-content: center;
+	justify-content: center;
+	display: flex;
+}
+
+
+
+.form-gene h4 {
 	font-size: 22px;
 	margin-bottom: 20px;
-		
+	color: white;
 }
 
 .control {
-	
 	width: 100%;
 	background: #4164b8;
 	padding: 10px;
@@ -40,24 +42,29 @@ body {
 	font-family: sans-serif;
 	color: white;
 	font-size: 18px;
-	
-	
 }
 
-::placeholder { 
-    color: #B8B9BC;
-    opacity: 1; 
+::placeholder {
+	color: #B8B9BC;
+	opacity: 1;
 }
-
 
 .form-gene .boton {
-	width:100px;
-	background:#ed2468;
+	
 	border: none;
-	padding: 12px;	
+	outline: none;
+	height: 40px;
+	background: #ed2468;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.subtitulos {
+	
 	font-family: sans-serif;
 	color: white;
-	margin: 16px 0;
-	font-size: 16px;
+	font-size: 14px;
+	
 	
 }

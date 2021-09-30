@@ -111,7 +111,7 @@ public class Usuario extends HttpServlet {
 			
 			String correo,nombre, contrasena , usuario ;
 			int cedula;
-			cedula = Integer.parseInt(request.getParameter("cedula"));
+			cedula = Integer.parseInt(request.getParameter("ced"));
 			correo = request.getParameter("correo");
 			nombre = request.getParameter("nombre");
 			contrasena = request.getParameter("contrasena");

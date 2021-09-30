@@ -43,8 +43,8 @@ public class UsuarioDAO {
 			String sql = "insert into usuarios values(?,?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, usuDTO.getCedula_usuario());
-			ps.setString(2, usuDTO.getNombre_usuario());
-			ps.setString(3, usuDTO.getEmail_usuario());
+			ps.setString(2, usuDTO.getEmail_usuario());
+			ps.setString(3, usuDTO.getNombre_usuario());			
 			ps.setString(4, usuDTO.getPass());
 			ps.setString(5, usuDTO.getUsuario());
 			resul = ps.executeUpdate() > 0;
@@ -70,11 +70,11 @@ public class UsuarioDAO {
 	public boolean ActualizarUsuario(UsuarioDTO usuDTO) {
 		boolean resul = false;
 		try {
-			String sql = "update usuarios set titulo=?, editorial=?, autor=?, No_paginas=? where isbn=?";
+			String sql = "update usuarios set email_usuario=?, nombre_usuario=?, pass=?, usuario=? where cedula_usuario=?";
 			ps = con.prepareStatement(sql);
 			
-			ps.setString(1, usuDTO.getNombre_usuario());
-			ps.setString(2, usuDTO.getEmail_usuario());
+			ps.setString(1, usuDTO.getEmail_usuario());
+			ps.setString(2, usuDTO.getNombre_usuario());			
 			ps.setString(3, usuDTO.getPass());
 			ps.setString(4, usuDTO.getUsuario());
 			ps.setInt(5, usuDTO.getCedula_usuario());
