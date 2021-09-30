@@ -11,12 +11,14 @@
 	<div class="login">
 		<img alt="Logo de f" class="avatar" src="img/q.png">
 		<h1>Tienda Genérica</h1>
-		<form>
+		<form action="LoginTienda" method="post">
 			<!-- USER NAME -->
 			<label for="user_name">Usuario: </label> <input type="text"
-				placeholder="Ingrese el usuario"> <label for="user_pass">Contraseña:
-			</label> <input type="password" placeholder="Ingrese contraseña"> <input
-				type="submit" value="Aceptar"> <input type="reset">
+				placeholder="Ingrese el usuario" name="usu"> <label
+				for="user_pass">Contraseña: </label> <input type="password"
+				placeholder="Ingrese contraseña" name="contra"> <input
+				type="submit" name="iniciar" value="Aceptar"> <input
+				type="reset">
 			<!-- <a href="#">Recuperar su contraseña</a> <br>
 				<a href="#">Crear un usuario</a> -->
 		</form>
