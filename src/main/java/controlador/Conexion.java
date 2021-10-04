@@ -21,7 +21,7 @@ public class Conexion {
 			conec = DriverManager.getConnection(url, user, pass);
 			// JOptionPane.showMessageDialog(null, "Conexion ok.....");
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Error en la Conexion....." + e);
+			//JOptionPane.showMessageDialog(null, "Error en la Conexion....." + e);
 		}
 		return conec;
 	}
