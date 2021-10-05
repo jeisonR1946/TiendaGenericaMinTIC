@@ -17,7 +17,7 @@
 
 	<%!String mensaje = "";
 	String estado = "";
-	int cedula = 0, cedula_cli = 0, cod_pro1 = 0, valor_total = 0;
+	int cedula = 0, cedula_cli = 0, valor_total = 0,cod_pro1 = 0,cantidad=0 ;
 	String nombre_producto = "";%>
 
 	<%
@@ -56,6 +56,24 @@
 		estado = "disabled";
 	}
 	%>
+	
+	<%
+	if (request.getParameter("cod_pro1") != null) {
+
+		cod_pro1 = Integer.parseInt(request.getParameter("cod_pro1"));
+
+		estado = "disabled";
+	}
+	%>
+	
+		<%
+	if (request.getParameter("cantidad") != null) {
+
+		cantidad = Integer.parseInt(request.getParameter("cantidad"));
+
+		estado = "disabled";
+	}
+	%>
 
 
 
@@ -67,6 +85,8 @@
 		cedula_cli = 0;
 		nombre_producto = "";
 		valor_total = 0;
+		cod_pro1=0;
+		cantidad=0;
 
 		mensaje = request.getParameter("men");
 		out.print("<script>alert('" + mensaje + "');</script>");//mensaje alert javascript
@@ -155,18 +175,22 @@
 						<input class="control" type="text" name="cod_pro1"
 							value="<%=cod_pro1%>" placeholder="Codigo"> <input
 							type="hidden" name="cod_producto" value="<%=cod_pro1%>">
-							
+
+						<input type="hidden" name="ced_cli" value="<%=cedula_cli%>">
+
 						<input class="boton" type="submit" value="Consultar producto"
-							name="consultarPro"
+							name="consultarPro"> <input
+							class="control" type="text" name="nombre_producto"
+							placeholder="nombre producto" value="<%=nombre_producto%>">
+
+						<input class="control" type="text" name="cantidad"
+							placeholder="Cantidad"> <input type="hidden" name="cant"
+							value="<%=cantidad%>">
 							
-							
-							> <input class="control" type="text"
-							name="nombre_producto" placeholder="nombre producto"
-							value="<%=nombre_producto%>"> <input class="control"
-							type="text" name="cantidad" placeholder="Cantidad"> <input
-							class="control" type="text" name="valor_total"
-							value="<%=valor_total%>" placeholder="Valor total"> <input
-							type="hidden" name="valor_total_hidden" value="<%=valor_total%>">
+							 <input class="control" type="text"
+							name="valor_total" value="<%=valor_total%>"
+							placeholder="Valor total"> <input type="hidden"
+							name="valor_total_hidden" value="<%=valor_total%>">
 
 
 					</div>

@@ -9,8 +9,29 @@ public class ProductoDTO {
 	private double precio_compra;
 	private double precio_venta;
 	private double subtotal;	
+	private int cantidad;
 	
 	
+	
+	
+	
+	
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
+	public ProductoDTO(int codigo_producto,int cantidad) {
+
+		this.codigo_producto = codigo_producto;
+		this.cantidad = cantidad;
+	}
 	
 
 	public ProductoDTO(int codigo_producto, double subtotal) {
