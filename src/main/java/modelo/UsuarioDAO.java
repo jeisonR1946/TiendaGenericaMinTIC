@@ -35,6 +35,7 @@ public class UsuarioDAO {
 		}
 		return usuDTO;
 
+
 	}
 	
 	public boolean InsertarUsuario(UsuarioDTO usuDTO) {

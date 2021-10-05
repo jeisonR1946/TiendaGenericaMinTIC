@@ -8,8 +8,28 @@ public class ProductoDTO {
 	private String nombre_producto;
 	private double precio_compra;
 	private double precio_venta;
+	private double subtotal;	
 	
-		
+	
+	
+
+	public ProductoDTO(int codigo_producto, double subtotal) {
+
+		this.codigo_producto = codigo_producto;
+		this.subtotal = subtotal;
+	}
+
+	public double getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
+	
+	
+	
+
 	public ProductoDTO(int codigo_producto, double iva_compra, int nit_proveedor, String nombre_producto,
 			double precio_compra, double precio_venta) {
 		
