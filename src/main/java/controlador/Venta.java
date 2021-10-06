@@ -51,8 +51,6 @@ public class Venta extends HttpServlet {
 		ClienteDAO cliDAO = new ClienteDAO();
 		ProductoDAO proDAO = new ProductoDAO();
 		VentaDAO vDAO = new VentaDAO();
-		//VentaDAO venDAO = new VentaDAO();
-		
 
 		if (request.getParameter("consultarUsu") != null) {
 
@@ -65,25 +63,18 @@ public class Venta extends HttpServlet {
 
 				cedula = usu.getCedula_usuario();
 				cedula_cli = cli.getCedula_cliente();
-				// response.sendRedirect(
-				// "Ventas.jsp?cedula=" + cedula + "&&correo=" + cedula + "&&cedula_cli=" +
-				// cedula_cli);
 
-			
-
-				response.sendRedirect(
-						"Ventas.jsp?cedula=" + cedula + "&&cedula_cli=" + cedula_cli);
+				response.sendRedirect("Ventas.jsp?cedula=" + cedula + "&&cedula_cli=" + cedula_cli);
 
 			} else {
 				response.sendRedirect("MenuPrincipal.jsp?men=El Usuario no existe");
 			}
 		}
-		
+
 		if (request.getParameter("consultarPro") != null) {
 
 			int cod_pro1, valor_total, cantidad;
 			String nombre_producto;
-			System.out.println();
 
 			cod_pro1 = Integer.parseInt(request.getParameter("cod_pro1"));
 			cantidad = Integer.parseInt(request.getParameter("cantidad"));
@@ -98,63 +89,120 @@ public class Venta extends HttpServlet {
 				valor_total = (int) pro1.getSubtotal();
 				cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
-				response.sendRedirect("Ventas.jsp?cod_pro1=" + cod_pro1 + "&&nombre_producto="
-						+ nombre_producto + "&&valor_total=" + valor_total+ "&&cantidad=" + cantidad);
-				
-				System.out.println(cod_pro1 + "  " + valor_total+ "   "+ cantidad);
+				response.sendRedirect("Ventas.jsp?cod_pro1=" + cod_pro1 + "&&nombre_producto=" + nombre_producto
+						+ "&&valor_total=" + valor_total + "&&cantidad=" + cantidad);
+
+				System.out.println(cod_pro1 + "  " + valor_total + "   " + cantidad);
 
 			} else {
 				response.sendRedirect("MenuPrincipal.jsp?men=El Usuario no existe");
 			}
 		}
-		
+
+		if (request.getParameter("consultarPro2") != null) {
+
+			int cod_pro12, valor_total2, cantidad2;
+			String nombre_producto2;
+
+			cod_pro12 = Integer.parseInt(request.getParameter("cod_pro12"));
+			cantidad2 = Integer.parseInt(request.getParameter("cantidad2"));
+			valor_total2 = Integer.parseInt(request.getParameter("valor_total2"));
+
+			ProductoDTO pro = proDAO.BuscarProducto(cod_pro12);
+			ProductoDTO pro1 = proDAO.SubtotalProducto(cantidad2, cod_pro12);
+			if (pro != null && pro1 != null) {
+
+				cod_pro12 = pro.getCodigo_producto();
+				nombre_producto2 = pro.getNombre_producto();
+				valor_total2 = (int) pro1.getSubtotal();
+				cantidad2 = Integer.parseInt(request.getParameter("cantidad2"));
+
+				response.sendRedirect("Ventas.jsp?cod_pro12=" + cod_pro12 + "&&nombre_producto2=" + nombre_producto2
+						+ "&&valor_total2=" + valor_total2 + "&&cantidad2=" + cantidad2);
+
+			} else {
+				response.sendRedirect("MenuPrincipal.jsp?men=El Usuario no existe");
+			}
+		}
+
+		if (request.getParameter("consultarPro3") != null) {
+
+			int cod_pro13, valor_total3, cantidad3;
+			String nombre_producto3;
+
+			cod_pro13 = Integer.parseInt(request.getParameter("cod_pro13"));
+			cantidad3 = Integer.parseInt(request.getParameter("cantidad3"));
+			valor_total3 = Integer.parseInt(request.getParameter("valor_total3"));
+
+			ProductoDTO pro = proDAO.BuscarProducto(cod_pro13);
+			ProductoDTO pro1 = proDAO.SubtotalProducto(cantidad3, cod_pro13);
+			if (pro != null && pro1 != null) {
+
+				cod_pro13 = pro.getCodigo_producto();
+				nombre_producto3 = pro.getNombre_producto();
+				valor_total3 = (int) pro1.getSubtotal();
+				cantidad3 = Integer.parseInt(request.getParameter("cantidad3"));
+
+				response.sendRedirect("Ventas.jsp?cod_pro13=" + cod_pro13 + "&&nombre_producto3=" + nombre_producto3
+						+ "&&valor_total3=" + valor_total3 + "&&cantidad3=" + cantidad3);
+
+			} else {
+				response.sendRedirect("MenuPrincipal.jsp?men=El Usuario no existe");
+			}
+		}
+
 		if (request.getParameter("confirmar") != null) {
 
-			int cod_pro1, cantidad,cedula,cedula_cli,cantidad2;
-		//	String nombre_producto;
-		
+			int cod_pro1, cantidad, cod_pro12, cantidad2, cod_pro13, cantidad3, cedula, cedula_cli;
 			cedula = Integer.parseInt(request.getParameter("ced"));
 			cedula_cli = Integer.parseInt(request.getParameter("ced_cli"));
 			cod_pro1 = Integer.parseInt(request.getParameter("cod_producto"));
-			//cod_pro1 = Integer.parseInt(request.getParameter("cod_producto"));
-		
-			
 			cantidad = Integer.parseInt(request.getParameter("cant"));
-		//	cantidad2 = Integer.parseInt(request.getParameter("cantidad"));
-			System.out.println(cantidad+"  ");
-		//	valor_total = Integer.parseInt(request.getParameter("valor_total"));
-			
+			cod_pro12 = Integer.parseInt(request.getParameter("cod_producto2"));
+			cantidad2 = Integer.parseInt(request.getParameter("cant2"));
+			cod_pro13 = Integer.parseInt(request.getParameter("cod_producto3"));
+			cantidad3 = Integer.parseInt(request.getParameter("cant3"));
 
-		//	ProductoDTO pro = proDAO.BuscarProducto(cod_producto);
-		//	ProductoDTO pro1 = proDAO.SubtotalProducto(cantidad, cod_producto);
-			VentaDTO v =  new VentaDTO(cedula, cedula_cli);
-			ProductoDTO p =  new ProductoDTO(cod_pro1,cantidad);
-			
-			
-			if (vDAO.InstertarVenta(v, p) ) {
-				response.sendRedirect("Ventas.jsp?men=Venta exitosa");
-			} else { 
-				response.sendRedirect("Ventas.jsp?men=No se registro la venta ");
+			if (cedula != 0 && cedula_cli != 0 && cod_pro1 != 0 && cantidad != 0) {
+
+				VentaDTO v = new VentaDTO(cedula, cedula_cli);
+				ProductoDTO p = new ProductoDTO(cod_pro1, cantidad);
+
+				if (vDAO.InstertarVenta(v, p)) {
+					response.sendRedirect("Ventas.jsp?men=Venta exitosa 1");
+				} else {
+					response.sendRedirect("Ventas.jsp?men=No se registro la venta ");
+				}
+
 			}
-					
-			
-			/*if (pro != null && pro1 != null) {
 
-				cod_producto = pro.getCodigo_producto();
-				nombre_producto = pro.getNombre_producto();
-				valor_total = (int) pro1.getSubtotal();
+			if (cedula != 0 && cedula_cli != 0 && cod_pro12 != 0 && cantidad2 != 0) {
 
-				response.sendRedirect("Ventas.jsp?cod_producto=" + cod_producto + "&&nombre_producto="
-						+ nombre_producto + "&&valor_total=" + valor_total);
-				System.out.println(cod_producto + "" + valor_total);
+				VentaDTO v = new VentaDTO(cedula, cedula_cli);
+				ProductoDTO p = new ProductoDTO(cod_pro12, cantidad2);
 
-			} else {
-				response.sendRedirect("MenuPrincipal.jsp?men=El Usuario no existe");
-			} */
+				if (vDAO.InstertarVenta(v, p)) {
+					response.sendRedirect("Ventas.jsp?men=Venta exitosa 2");
+				} else {
+					response.sendRedirect("Ventas.jsp?men=No se registro la venta ");
+				}
+
+			}
+
+			if (cedula != 0 && cedula_cli != 0 && cod_pro13 != 0 && cantidad3 != 0) {
+
+				VentaDTO v = new VentaDTO(cedula, cedula_cli);
+				ProductoDTO p = new ProductoDTO(cod_pro13, cantidad3);
+
+				if (vDAO.InstertarVenta(v, p)) {
+					response.sendRedirect("Ventas.jsp?men=Venta exitosa 3");
+				} else {
+					response.sendRedirect("Ventas.jsp?men=No se registro la venta ");
+				}
+
+			}
+
 		}
-		
-		
-		
 
 	}
 

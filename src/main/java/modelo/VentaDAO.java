@@ -43,9 +43,6 @@ public class VentaDAO {
 			ps.setInt(9, p.getCantidad());
 			ps.setInt(10, p.getCodigo_producto());
 		
-		//	System.out.println(sql);
-		
-			
 			resul = ps.executeUpdate() > 0;
 			
 			

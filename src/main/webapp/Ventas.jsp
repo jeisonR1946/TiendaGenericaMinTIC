@@ -17,8 +17,9 @@
 
 	<%!String mensaje = "";
 	String estado = "";
-	int cedula = 0, cedula_cli = 0, valor_total = 0,cod_pro1 = 0,cantidad=0 ;
-	String nombre_producto = "";%>
+	int cedula = 0, cedula_cli = 0, valor_total = 0, cod_pro1 = 0, cantidad = 0, valor_total2 = 0, cod_pro12 = 0,
+			cantidad2 = 0, valor_total3 = 0, cod_pro13 = 0, cantidad3 = 0;
+	String nombre_producto = "", nombre_producto2 = "", nombre_producto3 = "";%>
 
 	<%
 	if (request.getParameter("cedula") != null) {
@@ -56,7 +57,7 @@
 		estado = "disabled";
 	}
 	%>
-	
+
 	<%
 	if (request.getParameter("cod_pro1") != null) {
 
@@ -65,8 +66,8 @@
 		estado = "disabled";
 	}
 	%>
-	
-		<%
+
+	<%
 	if (request.getParameter("cantidad") != null) {
 
 		cantidad = Integer.parseInt(request.getParameter("cantidad"));
@@ -75,7 +76,78 @@
 	}
 	%>
 
+	<%
+	if (request.getParameter("nombre_producto2") != null) {
 
+		nombre_producto2 = request.getParameter("nombre_producto2");
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("valor_total2") != null) {
+
+		valor_total2 = Integer.parseInt(request.getParameter("valor_total2"));
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("cod_pro12") != null) {
+
+		cod_pro12 = Integer.parseInt(request.getParameter("cod_pro12"));
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("cantidad2") != null) {
+
+		cantidad2 = Integer.parseInt(request.getParameter("cantidad2"));
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("nombre_producto3") != null) {
+
+		nombre_producto3 = request.getParameter("nombre_producto3");
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("valor_total3") != null) {
+
+		valor_total3 = Integer.parseInt(request.getParameter("valor_total3"));
+
+		estado = "disabled";
+	}
+	%>
+
+
+	<%
+	if (request.getParameter("cod_pro13") != null) {
+
+		cod_pro13 = Integer.parseInt(request.getParameter("cod_pro13"));
+
+		estado = "disabled";
+	}
+	%>
+
+	<%
+	if (request.getParameter("cantidad3") != null) {
+
+		cantidad3 = Integer.parseInt(request.getParameter("cantidad3"));
+
+		estado = "disabled";
+	}
+	%>
 
 
 
@@ -85,8 +157,19 @@
 		cedula_cli = 0;
 		nombre_producto = "";
 		valor_total = 0;
-		cod_pro1=0;
-		cantidad=0;
+		cod_pro1 = 0;
+		cantidad = 0;
+		
+		nombre_producto2 = "";
+		valor_total2 = 0;
+		cod_pro12 = 0;
+		cantidad2 = 0;
+
+		nombre_producto3 = "";
+		valor_total3 = 0;
+		cod_pro13 = 0;
+		cantidad3 = 0;
+
 
 		mensaje = request.getParameter("men");
 		out.print("<script>alert('" + mensaje + "');</script>");//mensaje alert javascript
@@ -126,8 +209,6 @@
 	</nav>
 
 	<div>
-
-
 
 		<section class="form-gene">
 
@@ -170,47 +251,93 @@
 					class="subtitulos">Valor total: --</label>
 
 				<div>
+
 					<div>
 
 						<input class="control" type="text" name="cod_pro1"
 							value="<%=cod_pro1%>" placeholder="Codigo"> <input
 							type="hidden" name="cod_producto" value="<%=cod_pro1%>">
-
 						<input type="hidden" name="ced_cli" value="<%=cedula_cli%>">
-
 						<input class="boton" type="submit" value="Consultar producto"
-							name="consultarPro"> <input
-							class="control" type="text" name="nombre_producto"
-							placeholder="nombre producto" value="<%=nombre_producto%>">
-
-						<input class="control" type="text" name="cantidad"
-							placeholder="Cantidad"> <input type="hidden" name="cant"
-							value="<%=cantidad%>">
-							
-							 <input class="control" type="text"
-							name="valor_total" value="<%=valor_total%>"
-							placeholder="Valor total"> <input type="hidden"
-							name="valor_total_hidden" value="<%=valor_total%>">
-
+							name="consultarPro"> <input class="control" type="text"
+							name="nombre_producto" placeholder="nombre producto"
+							value="<%=nombre_producto%>"> <input class="control"
+							type="text" name="cantidad" placeholder="Cantidad"> <input
+							type="hidden" name="cant" value="<%=cantidad%>"> <input
+							class="control" type="text" name="valor_total"
+							value="<%=valor_total%>" placeholder="Valor total"> <input
+							type="hidden" name="valor_total_hidden" value="<%=valor_total%>">
 
 					</div>
 
 
+				</div>
+
+
+
+
+				<div>
+
+					<input class="control" type="text" name="cod_pro12"
+						value="<%=cod_pro12%>" placeholder="Codigo"> <input
+						type="hidden" name="cod_producto2" value="<%=cod_pro12%>">
+
+					<input type="hidden" name="ced_cli" value="<%=cedula_cli%>">
+
+					<input class="boton" type="submit" value="Consultar producto"
+						name="consultarPro2"> <input class="control" type="text"
+						name="nombre_producto2" placeholder="nombre producto"
+						value="<%=nombre_producto2%>"> <input class="control"
+						type="text" name="cantidad2" placeholder="Cantidad"> <input
+						type="hidden" name="cant2" value="<%=cantidad2%>"> <input
+						class="control" type="text" name="valor_total2"
+						value="<%=valor_total2%>" placeholder="Valor total"> <input
+						type="hidden" name="valor_total_hidden2" value="<%=valor_total2%>">
 
 				</div>
+
+
+
+
+				<div>
+
+					<input class="control" type="text" name="cod_pro13"
+						value="<%=cod_pro13%>" placeholder="Codigo"> <input
+						type="hidden" name="cod_producto3" value="<%=cod_pro13%>"> <input
+						type="hidden" name="ced_cli3" value="<%=cedula_cli%>"> <input
+						class="boton" type="submit" value="Consultar producto"
+						name="consultarPro3"> <input class="control" type="text"
+						name="nombre_producto3" placeholder="nombre producto"
+						value="<%=nombre_producto3%>"> <input class="control"
+						type="text" name="cantidad3" placeholder="Cantidad"> <input
+						type="hidden" name="cant3" value="<%=cantidad3%>"> <input
+						class="control" type="text" name="valor_total3"
+						value="<%=valor_total3%>" placeholder="Valor total"> <input
+						type="hidden" name="valor_total_hidden3" value="<%=valor_total3%>">
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				<div>
 					<input class="boton" type="submit" value="Confirmar"
 						name="confirmar">
 
 				</div>
-
-
-
-
-
-
-
 			</form>
 		</section>
 
