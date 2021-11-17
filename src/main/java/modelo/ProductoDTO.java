@@ -13,7 +13,12 @@ public class ProductoDTO {
 	
 	
 	
-	
+	public ProductoDTO(int codigo_producto,int cantidad,double subtotal) {
+
+		this.codigo_producto = codigo_producto;
+		this.cantidad = cantidad;
+		this.subtotal = subtotal;
+	}
 	
 	
 
@@ -25,6 +30,12 @@ public class ProductoDTO {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	
+	public ProductoDTO(int cantidad) {
+
+		this.cantidad = cantidad;
+	}
+	
 
 
 	public ProductoDTO(int codigo_producto,int cantidad) {

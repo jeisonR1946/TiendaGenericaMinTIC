@@ -10,14 +10,14 @@
 	rel="stylesheet"
 	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/master.css">
+<link rel="stylesheet" href="css/stylse.css">
 </head>
 <body>
 
 
 	<%!String mensaje = "";
 	String estado = "";
-	int cedula = 0, cedula_cli = 0, valor_total = 0, cod_pro1 = 0, cantidad = 0, valor_total2 = 0, cod_pro12 = 0,
+	int cedula = 0, cedula_cli = 0, valor_subtotal = 0, cod_pro1 = 0, cantidad = 0, valor_total2 = 0, cod_pro12 = 0,
 			cantidad2 = 0, valor_total3 = 0, cod_pro13 = 0, cantidad3 = 0;
 	String nombre_producto = "", nombre_producto2 = "", nombre_producto3 = "";%>
 
@@ -50,9 +50,9 @@
 	%>
 
 	<%
-	if (request.getParameter("valor_total") != null) {
+	if (request.getParameter("valor_subtotal") != null) {
 
-		valor_total = Integer.parseInt(request.getParameter("valor_total"));
+		valor_subtotal = Integer.parseInt(request.getParameter("valor_subtotal"));
 
 		estado = "disabled";
 	}
@@ -156,7 +156,7 @@
 		cedula = 0;
 		cedula_cli = 0;
 		nombre_producto = "";
-		valor_total = 0;
+		valor_subtotal  = 0;
 		cod_pro1 = 0;
 		cantidad = 0;
 		
@@ -219,10 +219,7 @@
 					<label class="subtitulos">Cedula Usuario: </label> <input
 						class="control" type="text" name="cedula" value="<%=cedula%>"
 						placeholder="cedula" required <%=estado%>> <input
-						type="hidden" name="ced" value="<%=cedula%>"> <label
-						class="subtitulos"> cedula traia usu: </label> <input
-						class="control" type="text" name="correo" placeholder="correo"
-						value="<%=cedula%>">
+						type="hidden" name="ced" value="<%=cedula%>">
 				</div>
 
 				<div>
@@ -230,32 +227,25 @@
 						class="control" type="text" name="cedula_cli"
 						value="<%=cedula_cli%>" placeholder="Cedula Cliente" required
 						<%=estado%>> <input type="hidden" name="ced_cli"
-						value="<%=cedula_cli%>"> <label class="subtitulos">cedula
-						traia cli: </label> <input class="control" type="text"
-						name="direccion_cliente" placeholder="Direccion Cliente"
 						value="<%=cedula_cli%>">
 				</div>
 				<div class="boton-cent">
 
 					<div>
-						<input class="boton" type="submit" value="Consultar Usuario"
+						<input class="boton" type="submit" value="Consultar Cedulas"
 							name="consultarUsu">
 					</div>
 
 
 				</div>
 
-				<label class="subtitulos">Cod pdoructo --</label> <label
-					class="subtitulos">boton: --</label> <label class="subtitulos">nombre
-					producto: --</label> <label class="subtitulos">Cantidad: --</label> <label
-					class="subtitulos">Valor total: --</label>
-
+			
 				<div>
 
 					<div>
 
 						<input class="control" type="text" name="cod_pro1"
-							value="<%=cod_pro1%>" placeholder="Codigo"> <input
+							value="<%=cod_pro1%>" placeholder="Codigo producto"> <input
 							type="hidden" name="cod_producto" value="<%=cod_pro1%>">
 						<input type="hidden" name="ced_cli" value="<%=cedula_cli%>">
 						<input class="boton" type="submit" value="Consultar producto"
@@ -264,9 +254,9 @@
 							value="<%=nombre_producto%>"> <input class="control"
 							type="text" name="cantidad" placeholder="Cantidad"> <input
 							type="hidden" name="cant" value="<%=cantidad%>"> <input
-							class="control" type="text" name="valor_total"
-							value="<%=valor_total%>" placeholder="Valor total"> <input
-							type="hidden" name="valor_total_hidden" value="<%=valor_total%>">
+							class="control" type="text" name="valor_subtotal"
+							value="<%=valor_subtotal%>" placeholder="Valor total"> <input
+							type="hidden" name="valor_total_hidden" value="<%=valor_subtotal%>">
 
 					</div>
 
